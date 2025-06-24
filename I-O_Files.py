@@ -72,14 +72,3 @@ with open(r"C:\Users\User\OneDrive\Desktop\my_text.txt", 'r') as rfile, open(r"C
     while txt:
         wfile.write(f"{txt[:-1]} ({len(txt.split(' '))} words)\n")
         txt = rfile.readline()
-
-
-# class a:
-#     s=2
-#     def __init__(self):
-#         self.f = 8
-#
-#     @staticmethod
-#     def f():
-#         print(a.s)
-# a.f()

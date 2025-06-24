@@ -40,7 +40,7 @@ with open(r"C:\Users\User\OneDrive\Desktop\my_text.txt", 'r') as f:
     while txt:
         words_lst = txt.lower().strip().split(' ')
         sum_words += len(list(map(lambda word: not word.isdigit(), words_lst)))
-        sum_letters += len([word for word in words_lst if word not in ['\n']])
+        sum_letters += len([letter for letter in txt if letter not in ['\n']])
 
         words_dict = dict((word,words_lst.count(word)) for word in words_lst)
         most_common_word.update(words_dict)
@@ -69,6 +69,5 @@ print("question 5: ")
 with open(r"C:\Users\User\OneDrive\Desktop\my_text.txt", 'r') as rfile, open(r"C:\Users\User\OneDrive\Desktop\summary.txt", 'w') as wfile:
     txt = rfile.readline()
     while txt:
-        wfile.write(f"{txt} ({len(txt.split(' '))} words)")
+        wfile.write(f"{txt[:-1]} ({len(txt.split(' '))} words)\n")
         txt = rfile.readline()
-

@@ -42,7 +42,7 @@ with open(r"C:\Users\User\OneDrive\Desktop\my_text.txt", 'r') as f:
         sum_words += len(list(map(lambda word: not word.isdigit(), words_lst)))
         sum_letters += len([letter for letter in txt if letter not in ['\n']])
 
-        words_dict = dict((word,words_lst.count(word)) for word in words_lst)
+        words_dict = {word:words_lst.count(word) for word in words_lst}
         most_common_word.update(words_dict)
 
 
@@ -57,6 +57,7 @@ with open(r"C:\Users\User\OneDrive\Desktop\my_text.txt", 'r') as f:
     for k,v in most_common_word.items():
         if max_number<v:
             most_word = k
+            max_number = v
 
     print("the indexes of rows that has the even words : ", even_words_rows)
     print("summary number of all words in the file : " ,sum_words)
@@ -71,3 +72,14 @@ with open(r"C:\Users\User\OneDrive\Desktop\my_text.txt", 'r') as rfile, open(r"C
     while txt:
         wfile.write(f"{txt[:-1]} ({len(txt.split(' '))} words)\n")
         txt = rfile.readline()
+
+
+# class a:
+#     s=2
+#     def __init__(self):
+#         self.f = 8
+#
+#     @staticmethod
+#     def f():
+#         print(a.s)
+# a.f()
